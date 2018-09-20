@@ -11,12 +11,6 @@ import Vue from "vue";
 import { i18n, router } from "./plugins";
 
 /* ============
- * Styling
- * ============ */
-
-import "./assets/scss/app.scss";
-
-/* ============
  * Main App
  * ============ */
 
