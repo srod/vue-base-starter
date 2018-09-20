@@ -18,7 +18,7 @@ const router = new VueRouter({
   routes
 });
 
-describe("@/views/Home/HomeIndex.vue", () => {
+describe("@/views/Home/Index.vue", () => {
   let actions;
   let mutations;
   let getters;

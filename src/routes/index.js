@@ -11,6 +11,15 @@ export default [
   },
 
   {
+    path: "/login",
+    name: "login.index",
+    meta: {
+      guest: true
+    },
+    component: () => import("@/views/Login/Index.vue")
+  },
+
+  {
     path: "/logout",
     name: "logout",
     meta: {

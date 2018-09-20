@@ -1,8 +1,9 @@
 <template>
   <main-layout>
-    <div>
-      <p>Home</p>
-    </div>
+    <h1>Home</h1>
+    <p>
+      <router-link :to="{ name: 'login.index' }">Login</router-link>
+    </p>
   </main-layout>
 </template>
 
