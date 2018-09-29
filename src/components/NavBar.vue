@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import { authComputed } from "@/store/helpers";
+import { authComputed } from '@/store/helpers';
 
 export default {
-  name: "NavBar",
+  name: 'NavBar',
 
   computed: {
     ...authComputed

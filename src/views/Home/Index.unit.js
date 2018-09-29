@@ -1,8 +1,8 @@
-import { shallowMount, createLocalVue } from "@vue/test-utils";
-import Vuex from "vuex";
-import VueRouter from "vue-router";
+import { shallowMount, createLocalVue } from '@vue/test-utils';
+import Vuex from 'vuex';
+import VueRouter from 'vue-router';
 
-import HomeIndex from "./Index.vue";
+import HomeIndex from './Index.vue';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
@@ -10,7 +10,7 @@ localVue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     component: HomeIndex
   }
 ];
@@ -18,7 +18,7 @@ const router = new VueRouter({
   routes
 });
 
-describe("@/views/Home/Index.vue", () => {
+describe('@/views/Home/Index.vue', () => {
   let actions;
   let mutations;
   let getters;
@@ -47,7 +47,7 @@ describe("@/views/Home/Index.vue", () => {
     });
   });
 
-  test("should render be ok", () => {
+  test('should render be ok', () => {
     const wrapper = shallowMount(HomeIndex, { localVue, store, router });
     expect(wrapper).toBeTruthy();
   });

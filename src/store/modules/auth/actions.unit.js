@@ -1,20 +1,20 @@
-import state from "./state";
-import actions from "./actions";
+import state from './state';
+import actions from './actions';
 
-describe("@/store/modules/auth/actions", () => {
-  test("init", () => {
+describe('@/store/modules/auth/actions', () => {
+  test('init', () => {
     const dispatch = jest.fn();
     actions.init({ state, dispatch });
     expect(dispatch).toBeCalled();
   });
 
-  test("register", () => {
+  test('register', () => {
     const commit = jest.fn();
     actions.register({ commit });
     expect(commit).toBeCalled();
   });
 
-  test("login", () => {
+  test('login', () => {
     const commit = jest.fn();
     const dispatch = jest.fn();
     const getters = jest.fn();
@@ -22,7 +22,7 @@ describe("@/store/modules/auth/actions", () => {
     expect(commit).toBeCalled();
   });
 
-  test("login with already logged in", () => {
+  test('login with already logged in', () => {
     const commit = jest.fn();
     const dispatch = jest.fn();
     const getters = { loggedIn: true };
@@ -30,20 +30,20 @@ describe("@/store/modules/auth/actions", () => {
     expect(dispatch).toBeCalled();
   });
 
-  test("logout", () => {
+  test('logout', () => {
     const commit = jest.fn();
     actions.logout({ commit });
     expect(commit).toBeCalled();
   });
 
-  test("validate sould return null", done => {
+  test('validate sould return null', done => {
     actions.validate({ state }).then(data => {
       expect(data).toBe(null);
       done();
     });
   });
 
-  test("validate should return true", done => {
+  test('validate should return true', done => {
     state.currentUser = {};
     actions.validate({ state }).then(data => {
       expect(data).toBe(true);

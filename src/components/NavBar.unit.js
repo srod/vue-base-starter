@@ -1,12 +1,12 @@
-import { shallowMount, createLocalVue, RouterLinkStub } from "@vue/test-utils";
-import Vuex from "vuex";
+import { shallowMount, createLocalVue, RouterLinkStub } from '@vue/test-utils';
+import Vuex from 'vuex';
 
-import NavBar from "./NavBar.vue";
+import NavBar from './NavBar.vue';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe("@/compnents/NavBar.vue", () => {
+describe('@/compnents/NavBar.vue', () => {
   let actions;
   let mutations;
   let getters;
@@ -35,7 +35,7 @@ describe("@/compnents/NavBar.vue", () => {
     });
   });
 
-  test("should render be ok", () => {
+  test('should render be ok', () => {
     const wrapper = shallowMount(NavBar, {
       localVue,
       store,

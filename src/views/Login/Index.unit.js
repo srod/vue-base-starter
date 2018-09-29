@@ -1,10 +1,10 @@
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount } from '@vue/test-utils';
 
-import LoginIndex from "./Index.vue";
+import LoginIndex from './Index.vue';
 
-describe("@/views/Login/Index.vue", () => {
-  test("should render be ok", () => {
+describe('@/views/Login/Index.vue', () => {
+  test('should render be ok', () => {
     const { element } = shallowMount(LoginIndex);
-    expect(element.textContent).toBe("Login");
+    expect(element.textContent).toBe('Login');
   });
 });

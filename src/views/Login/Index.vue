@@ -8,10 +8,10 @@
 /* ============
  * Login Index Page
  * ============ */
-import MainLayout from "@/layouts/Main.vue";
+import MainLayout from '@/layouts/Main.vue';
 
 export default {
-  name: "LoginIndex",
+  name: 'LoginIndex',
 
   components: { MainLayout }
 };

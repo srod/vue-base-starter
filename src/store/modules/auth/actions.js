@@ -3,31 +3,31 @@
  * ============ */
 
 // import Vue from "vue";
-import { setDefaultAuthHeaders } from "@/store/helpers";
+import { setDefaultAuthHeaders } from '@/store/helpers';
 
 export const init = ({ state, dispatch }) => {
   setDefaultAuthHeaders(state);
-  dispatch("validate");
+  dispatch('validate');
 };
 
 export const register = ({ commit }) => {
-  commit("login", "RandomGeneratedToken");
+  commit('login', 'RandomGeneratedToken');
   // Vue.router.push({
   //   name: "home.index"
   // });
 };
 
 export const login = ({ commit, dispatch, getters }) => {
-  if (getters.loggedIn) return dispatch("validate");
-  commit("set_user", "RandomGeneratedToken");
-  dispatch("account/find");
+  if (getters.loggedIn) return dispatch('validate');
+  commit('set_user', 'RandomGeneratedToken');
+  dispatch('account/find');
   // Vue.router.push({
   //   name: "home.index"
   // });
 };
 
 export const logout = ({ commit }) => {
-  commit("set_user", null);
+  commit('set_user', null);
 };
 
 // Validates the current user's token and refreshes it

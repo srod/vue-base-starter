@@ -2,15 +2,15 @@
  * Vue Router
  * ============ */
 
-import Vue from "vue";
-import VueRouter from "vue-router";
-import routes from "@/routes";
-import store from "@/store";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import routes from '@/routes';
+import store from '@/store';
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
   scrollBehavior(to, from, savedPosition) {
@@ -23,7 +23,7 @@ export const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const loggedIn = store.getters["auth/loggedIn"];
+  const loggedIn = store.getters['auth/loggedIn'];
   const authRequired = to.matched.some(route => route.meta.auth);
 
   if (authRequired && !loggedIn) {
@@ -35,7 +35,7 @@ router.beforeEach((to, from, next) => {
   // If auth is required and the user is logged in...
   if (authRequired && loggedIn) {
     // Validate the local user token...
-    return store.dispatch("auth/validate").then(validUser => {
+    return store.dispatch('auth/validate').then(validUser => {
       // Then continue if the token still represents a valid user,
       // otherwise redirect to login.
       validUser ? next() : redirectToLogin();
@@ -46,7 +46,7 @@ router.beforeEach((to, from, next) => {
     // If the user is authenticated and visits
     // a guest page, redirect to the dashboard page
     return next({
-      name: "home.index"
+      name: 'home.index'
     });
   }
 
@@ -54,7 +54,7 @@ router.beforeEach((to, from, next) => {
 
   function redirectToLogin() {
     // Pass the original route to the login component
-    next({ name: "home.index", query: { redirectFrom: to.fullPath } });
+    next({ name: 'home.index', query: { redirectFrom: to.fullPath } });
   }
 });
 

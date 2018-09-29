@@ -8,10 +8,10 @@
 /* ============
  * Not Found Index Page
  * ============ */
-import MainLayout from "@/layouts/Main.vue";
+import MainLayout from '@/layouts/Main.vue';
 
 export default {
-  name: "NotFoundIndex",
+  name: 'NotFoundIndex',
 
   components: { MainLayout }
 };

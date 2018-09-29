@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue from 'vue';
 
 class BaseApi {
   /**
@@ -91,7 +91,7 @@ class BaseApi {
    */
   setParameter(parameter, value) {
     if (!parameter) {
-      throw new Error("Parameter is missing");
+      throw new Error('Parameter is missing');
     }
     this.parameters[parameter] = value;
 
@@ -122,7 +122,7 @@ class BaseApi {
    */
   removeParameter(parameter) {
     if (!parameter) {
-      throw new Error("Parameter is missing");
+      throw new Error('Parameter is missing');
     }
     delete this.parameters[parameter];
 
@@ -140,10 +140,10 @@ class BaseApi {
    */
   submit(requestType, url, data = null) {
     if (!requestType) {
-      throw new Error("requestType is missing");
+      throw new Error('requestType is missing');
     }
     if (!url) {
-      throw new Error("url is missing");
+      throw new Error('url is missing');
     }
     return new Promise((resolve, reject) => {
       Vue.$http[requestType](url + this.getParameterString(), data)
@@ -166,7 +166,7 @@ class BaseApi {
    * @returns {Promise} The result in a promise.
    */
   all() {
-    return this.submit("get", `/${this.endpoint}`);
+    return this.submit('get', `/${this.endpoint}`);
   }
 
   /**
@@ -178,9 +178,9 @@ class BaseApi {
    */
   find(id) {
     if (!id) {
-      throw new Error("id is missing");
+      throw new Error('id is missing');
     }
-    return this.submit("get", `/${this.endpoint}/${id}`);
+    return this.submit('get', `/${this.endpoint}/${id}`);
   }
 
   /**
@@ -192,9 +192,9 @@ class BaseApi {
    */
   create(item) {
     if (!item) {
-      throw new Error("item is missing");
+      throw new Error('item is missing');
     }
-    return this.submit("post", `/${this.endpoint}`, item);
+    return this.submit('post', `/${this.endpoint}`, item);
   }
 
   /**
@@ -207,12 +207,12 @@ class BaseApi {
    */
   update(id, item) {
     if (!id) {
-      throw new Error("id is missing");
+      throw new Error('id is missing');
     }
     if (!item) {
-      throw new Error("item is missing");
+      throw new Error('item is missing');
     }
-    return this.submit("put", `/${this.endpoint}/${id}`, item);
+    return this.submit('put', `/${this.endpoint}/${id}`, item);
   }
 
   /**
@@ -224,9 +224,9 @@ class BaseApi {
    */
   destroy(id) {
     if (!id) {
-      throw new Error("id is missing");
+      throw new Error('id is missing');
     }
-    return this.submit("delete", `/${this.endpoint}/${id}`);
+    return this.submit('delete', `/${this.endpoint}/${id}`);
   }
 
   /**
@@ -242,8 +242,8 @@ class BaseApi {
       .map(key => `${key}=${this.parameters[key]}`);
 
     return parameterStrings.length === 0
-      ? ""
-      : `?${parameterStrings.join("&")}`;
+      ? ''
+      : `?${parameterStrings.join('&')}`;
   }
 }
 

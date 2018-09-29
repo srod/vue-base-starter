@@ -1,11 +1,11 @@
-import { mapState, mapGetters } from "vuex";
-import Axios from "axios";
+import { mapState, mapGetters } from 'vuex';
+import Axios from 'axios';
 
 export const authComputed = {
-  ...mapState("auth", {
+  ...mapState('auth', {
     currentUser: state => state.currentUser
   }),
-  ...mapGetters("auth", ["loggedIn"])
+  ...mapGetters('auth', ['loggedIn'])
 };
 
 export function saveState(key, state) {
@@ -19,5 +19,5 @@ export function getSavedState(key) {
 export function setDefaultAuthHeaders(state) {
   Axios.defaults.headers.common.Authorization = state.currentUser
     ? `Bearer ${state.currentUser.token}`
-    : "";
+    : '';
 }

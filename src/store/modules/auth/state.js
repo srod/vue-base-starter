@@ -1,8 +1,8 @@
 /* ============
  * State of the auth module
  * ============ */
-import { getSavedState } from "@/store/helpers";
+import { getSavedState } from '@/store/helpers';
 
 export default {
-  currentUser: getSavedState("auth.currentUser")
+  currentUser: getSavedState('auth.currentUser')
 };

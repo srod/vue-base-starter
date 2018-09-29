@@ -11,11 +11,11 @@
 /* ============
  * Home Index Page
  * ============ */
-import MainLayout from "@/layouts/Main.vue";
-import { authComputed } from "@/store/helpers";
+import MainLayout from '@/layouts/Main.vue';
+import { authComputed } from '@/store/helpers';
 
 export default {
-  name: "HomeIndex",
+  name: 'HomeIndex',
 
   components: { MainLayout },
 

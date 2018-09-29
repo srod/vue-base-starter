@@ -2,8 +2,8 @@
  * English Language File
  * ============ */
 
-import auth from "./auth.json";
-import general from "./general.json";
+import auth from './auth.json';
+import general from './general.json';
 
 export default {
   auth,
